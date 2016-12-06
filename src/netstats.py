@@ -45,7 +45,6 @@ class WifiIndicator():
         Gtk.main_quit()
 
     def stats(self):
-        t = 2
         while True:
             first = bytes_received()
             time.sleep(1)
@@ -59,8 +58,6 @@ class WifiIndicator():
                 mention, self.app,
                 priority=GObject.PRIORITY_DEFAULT
             )
-            t += 1
-
 
 WifiIndicator()
 GObject.threads_init
