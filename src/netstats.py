@@ -19,7 +19,7 @@ class WifiIndicator():
         )
         self.indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
         self.indicator.set_menu(self.menu())
-        self.indicator.set_label('-- kB/s', self.app)
+        self.indicator.set_label('| ?? kB/s | ?? dBm | ?? % |', self.app)
         # thread
         self.update = Thread(target=self.stats)
         # daemonize the thread to make the indicator stopable
@@ -50,7 +50,9 @@ class WifiIndicator():
             first = bytes_received()
             time.sleep(1)
             second = bytes_received()
-            mention = str(download_speed(first, second)) +  ' kB/s'
+            dl = download_speed(first, second)
+            qlt, lvl = wifi_quality()
+            mention = '| ' + dl +  ' kB/s | ' + lvl + ' dBm' + ' | ' + qlt + ' % |'
             # apply the interface update using GObject.idle_add()
             GObject.idle_add(
                 self.indicator.set_label,
