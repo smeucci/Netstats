@@ -1,5 +1,4 @@
 import threading
-from collections import deque
 import time
 import psutil
 import subprocess
