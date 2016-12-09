@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=0.1
+Name=Netstats Indicator
+Comment=Show network stats for wifi such as download speed, link quality and signal level
+Exec=netstats
+Icon=icon/icon-default.svg
+Type=Application
+Terminal=false
+Categories=GNOME;GTK;Utility;

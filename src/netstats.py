@@ -12,7 +12,7 @@ from stats import *
 class WifiIndicator():
     def __init__(self):
         self.app = 'netstats'
-        icon = os.path.dirname(os.path.abspath(__file__)) + '/../icon/icon.png'
+        icon = os.path.dirname(os.path.abspath(__file__)) + '/../icon/icon-applet.png'
         self.indicator = AppIndicator3.Indicator.new(
             self.app, icon,
             AppIndicator3.IndicatorCategory.OTHER
